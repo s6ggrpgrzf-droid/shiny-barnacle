@@ -200,7 +200,7 @@ const PLATFORMS_DEFEND = [
   {id:"ubereats",  label:"Uber Eats", color:"#06C167", e:"🟢"},
   {id:"spark",     label:"Spark",     color:"#0071CE", e:"🔵"},
   {id:"instacart", label:"Instacart", color:"#43B02A", e:"🟩"},
-];
+];  {id:"amazonflex", label:"Amazon Flex", color:"#FF9900", e:"📦"},
 
 const PLATFORM_HABITS = {
   doordash:[
@@ -234,6 +234,13 @@ const PLATFORM_HABITS = {
     {e:"📋",t:"Note your Batch ID on any problem order",why:"Instacart support identifies orders by Batch ID. For any delivery where something goes wrong, note or screenshot the Batch ID immediately. You cannot file an effective appeal without it."},
     {e:"⭐",t:"4.7 rating is the key number to protect",why:"Instacart shoppers rated below 4.7 see fewer and lower-paying batches. Some high-paying batches are only available above 4.8. Rating removal is possible for complaints caused by out-of-stock items, store errors, or app issues — but you must request it and frame it correctly."},
     {e:"🔄",t:"Document difficult customers before they complain",why:"If a customer is rude or makes unreasonable demands, note it in the Instacart app's feedback right away. This creates a record before any dispute is filed. It signals to support that the customer has a history — and that helps you if they later file a false complaint."},
+  ],  amazonflex:[
+    {e:"📸",t:"Photo every single drop-off",why:"Amazon Flex relies heavily on delivery photos. Take a clear, well-lit photo showing the package(s) in their final location (porch, mailbox, etc.). This is your #1 protection against 'never received' complaints.",urgent:true},
+    {e:"📍",t:"Keep GPS on the entire block",why:"Amazon logs your GPS route. In any dispute, support checks your GPS track against the delivery address and timestamp.",urgent:true},
+    {e:"🔢",t:"Scan one address at a time on multi-package stops",why:"This forces the app to prompt for a photo at every stop. Skipping this is a common reason drivers get dinged for missing packages.",urgent:true},
+    {e:"🖼️",t:"Screenshot your delivery confirmation in the app",why:"After marking delivered, screenshot the confirmation screen immediately. It shows the exact time and TBA/package IDs."},
+    {e:"🔄",t:"Return undeliverable packages with correct reason code",why:"Always use the app's undeliverable reason code at the location if you can't deliver. Bring them back to the station same day or by 10am next day."},
+    {e:"📋",t:"Note the Block ID and TBA numbers on problem deliveries",why:"Support identifies your block by Block ID and individual packages by TBA. Screenshot or note them immediately if anything feels off."},
   ],
 };
 
@@ -287,6 +294,17 @@ const PLATFORM_APPEALS = {
     {e:"🔄",t:"Escalation — First Appeal Denied",urgency:"USE AFTER A FIRST DENIAL",color:"#8B5CF6",secs:[
       {h:"Senior review request",msg:"Hello,\n\nI am following up on a previous Instacart support request about batch #[BATCH ID] from [DATE].\n\nMy first appeal was denied. I am requesting escalation to a senior Shopper support specialist because:\n- My delivery photo and batch activity log were not fully reviewed\n- The complaint contradicts my documented in-app actions\n- This is continuing to affect my Shopper rating and batch access\n\nI have been an active Instacart Shopper since [DATE] with a strong record. I am asking for a complete review.\n\nThank you.",w:"Requesting a 'senior Shopper support specialist' by that title moves your ticket past first-tier agents who use scripted responses."},
     ]},
+  ],  amazonflex:[
+    {e:"🚫",t:"False 'Never Received' / Missing Package",urgency:"HIGH — Directly affects your standing",color:"#F43F5E",secs:[
+      {h:"Standard missing package appeal",msg:"Hello Amazon Flex Support,\n\nI am appealing a missing package complaint on Block [BLOCK ID] for package TBA [TBA NUMBER] delivered on [DATE].\n\nThis delivery was completed successfully. My documentation:\n- Delivery photo taken through the Amazon Flex app showing the package at the customer's door\n- GPS data confirming I was at the delivery address at [TIME]\n- App delivery confirmation record\n\nI request this complaint be reviewed and removed from my standing.\n\nThank you.",w:"Always include Block ID + TBA. Amazon support can pull your exact GPS and photo records."},
+      {h:"Multi-package block with one complaint",msg:"Hello Amazon Flex Support,\n\nI am appealing a missing package complaint on Block [BLOCK ID] for TBA [TBA NUMBER].\n\nAll other packages in this block were successfully delivered. I have:\n- Photo proof for this stop\n- GPS confirmation at the address\n\nThis appears to be an isolated false claim. Please remove the ding from my standing.\n\nThank you.",w:"Amazon often removes single-package dings when the rest of the block is clean."},
+    ]},
+    {e:"⭐",t:"Unfair Standing / Rating Ding",urgency:"MEDIUM",color:"#F5A623",secs:[
+      {h:"Photo was taken but still dinged",msg:"Hello,\n\nI am requesting removal of a delivery ding on Block [BLOCK ID], TBA [TBA NUMBER].\n\nI followed all procedures and took a delivery photo through the app. GPS confirms I was at the address. Please review the attached photo and GPS data and remove this from my standing.\n\nThank you.",w:"Emphasize that you used the in-app photo — this is the strongest evidence Amazon accepts."},
+    ]},
+    {e:"🔄",t:"Escalation — Appeal Denied",urgency:"USE AFTER FIRST DENIAL",color:"#8B5CF6",secs:[
+      {h:"Request senior review",msg:"Hello,\n\nI am following up on a previous appeal for Block [BLOCK ID] / TBA [TBA NUMBER].\n\nMy initial appeal was denied, but my delivery photo and GPS records clearly show the package was delivered. I request escalation to a senior specialist for full review.\n\nThank you.",w:"Asking for 'senior specialist' often gets a fresh set of eyes on your case."},
+    ]},
   ],
 };
 
@@ -322,6 +340,13 @@ const PLATFORM_CHECKLISTS = {
     {e:"📍",t:"GPS active throughout the entire batch"},
     {e:"📋",t:"Batch confirmed complete in the app"},
     {e:"🧾",t:"Batch summary screenshotted after delivery"},
+  ],  amazonflex:[
+    {e:"📸",t:"Delivery photo taken in the Amazon Flex app"},
+    {e:"📍",t:"GPS was active for the entire block"},
+    {e:"🔢",t:"Scanned packages one address at a time (multi-stop blocks)"},
+    {e:"🖼️",t:"Delivery confirmation screen screenshotted"},
+    {e:"📋",t:"Block ID and TBA numbers noted if anything felt off"},
+    {e:"🔄",t:"Any undeliverable packages returned with correct reason code"},
   ],
 };
 
