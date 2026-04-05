@@ -1321,8 +1321,16 @@ function App() {
                   ))}
                 </div>
 
-                {/* Overlay CTA pinned on top */}
-                                    <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:22,textAlign:"left"}}>
+                                {/* Overlay CTA pinned on top */}
+                <div style={{position:"absolute",inset:0,display:"flex",flexDirection:"column",justifyContent:"center",alignItems:"center",background:"linear-gradient(180deg,rgba(7,8,10,0) 0%,rgba(7,8,10,0.7) 25%,rgba(7,8,10,0.97) 50%)",borderRadius:16,padding:"24px 20px"}}>
+                  <div className="defender-pulse" style={{borderRadius:22,overflow:"hidden",padding:"26px 22px",textAlign:"center",background:"linear-gradient(160deg,#0e0a1a,#0d0f13)",border:"1px solid rgba(139,92,246,0.35)",width:"100%",position:"relative"}}>
+                    <div style={{position:"absolute",top:0,left:0,right:0,height:1,background:`linear-gradient(90deg,transparent,${C.purple},transparent)`}}/>
+                    <div style={{fontSize:52,marginBottom:14}}>🛡️</div>
+                    <div style={{fontSize:21,fontWeight:900,marginBottom:8,background:`linear-gradient(135deg,${C.text} 20%,${C.purple})`,WebkitBackgroundClip:"text",WebkitTextFillColor:"transparent"}}>Protect Your Account</div>
+                    <div style={{fontSize:14,color:C.text2,lineHeight:1.8,marginBottom:20}}>False complaints, unfair ratings, and deactivation threats are real. This section gives you the exact habits, scripts, and appeal letters to fight back — by platform.</div>
+                    
+                    {/* Updated preview with Amazon Flex */}
+                    <div style={{display:"flex",flexDirection:"column",gap:8,marginBottom:22,textAlign:"left"}}>
                       {[["🛡️","Critical habits for DoorDash, Uber Eats, Spark, Instacart & Amazon Flex"],["📋","Word-for-word appeal scripts written for support agents"],["✅","Per-delivery checklists saved per platform"],["📝","Private notes log for problem addresses & customers"]].map(([e,f],i)=>(
                         <div key={i} style={{display:"flex",alignItems:"center",gap:10,background:"rgba(139,92,246,0.07)",borderRadius:10,padding:"10px 13px",border:"1px solid rgba(139,92,246,0.15)"}}>
                           <span style={{fontSize:16,flexShrink:0}}>{e}</span>
@@ -1330,6 +1338,7 @@ function App() {
                         </div>
                       ))}
                     </div>
+                    
                     <button onClick={()=>{setShowPay(true);setPayStep("offer");}} style={{background:`linear-gradient(135deg,${C.purple},#6d28d9)`,border:"none",borderRadius:16,padding:"17px",fontSize:16,fontWeight:900,cursor:"pointer",width:"100%",color:"#fff",boxShadow:"0 8px 28px rgba(139,92,246,0.45)"}}>Unlock Elite Access — $10</button>
                     <div style={{fontSize:12,color:C.text3,marginTop:10}}>Lifetime access · Free updates forever</div>
                   </div>
